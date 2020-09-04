@@ -6,4 +6,4 @@ for line in sys.stdin:
     value=int(line)
     if start<=value<=end:
         print(value)
-# ./ch6/5.1.py 60 | ./ch6/5.2.py 20 60
+# ./ch6/6.1.py 60 | ./ch6/6.2.py 20 60
