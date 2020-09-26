@@ -2,6 +2,9 @@
 import random
 a=random.randint(0,100)
 b=random.randint(0,100)
+while a==0 or b==0:
+    a=random.randint(0,100)
+    b=random.randint(0,100)
 print("整数1 = %d,整数2 = %d"%(a,b))
 m,n=max(a,b),min(a,b)
 while m%n!=0:
