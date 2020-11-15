@@ -1,16 +1,15 @@
-#print(a)
-#NameError: name 'a' is not defined
-#int a
-#SyntaxError: invalid syntax
-#a=1
-#a.show()
-#AttributeError: 'int' object has no attribute 'show'
-#print(11+"abc")
-#TypeError: unsupported operand type(s) for +: 'int' and 'str'
-#int("abc")
-#ValueError: invalid literal for int() with base 10: 'abc'
-#print(1/0)
-#ZeroDivisionError: division by zero
-#a=[1,2,3]
-#print(a[3])
-#IndexError: list index out of range
+class LengthError(Exception):
+    def __init__(self,length):
+        Exception.__init__(self, length)
+        self.length=length
+    def __str__(self):
+        return "当前字符串长度为%d"%(self.length)+",请将长度控制在0~10之间"
+def get_length(s):
+    length=len(s)
+    if length<0 or length>10:
+        raise LengthError(length)
+    return length
+s1="asdf"
+print(get_length(s1))
+s2="asdfasdfasdf"
+print(get_length(s2))
