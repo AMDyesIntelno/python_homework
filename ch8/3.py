@@ -1,12 +1,28 @@
-#利用元组作为函数的返回值,求其中的最大值,最小值和元素个数
-def fun(l):
-    return (max(l),min(l),len(l))
-s1=[9,7,8,3,2,1,55,6]
-s2=["apple","pear","melon","kiwi"]
-s3="TheQuickBrownFox"
-print("list=",s1)
-print("最大值=%d,最小值=%d,元素个数=%d"%(fun(s1)[0],fun(s1)[1],fun(s1)[2]))
-print("list=",s2)
-print("最大值=%s,最小值=%s,元素个数=%d"%(fun(s2)[0],fun(s2)[1],fun(s2)[2]))
-print("list=",s3)
-print("最大值=%s,最小值=%s,元素个数=%d"%(fun(s3)[0],fun(s3)[1],fun(s3)[2]))
+def fib_rec(n):
+    if n==0:
+        return 0
+    elif n==1:
+        return 1
+    else:
+        return fib_rec(n-1)+fib_rec(n-2)
+def fib(n):
+    ans=[]
+    for i in range(n+1):
+        if i==0:
+            ans.append(0)
+        elif i==1:
+            ans.append(1)
+        else:
+            ans.append(ans[i-1]+ans[i-2])
+    return ans
+for i in range(1,21):
+    print("%5d"%fib_rec(i),end="")
+    if i==10:
+        print()
+print("\n---------------------------------------------------")
+fib_list=fib(20)
+for i in range(1,21):
+    print("%5d"%fib_list[i],end="")
+    if i==10:
+        print()
+print()
