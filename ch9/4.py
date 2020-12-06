@@ -1,18 +1,45 @@
-class Person:
-    def __init__(self,name,age):
-        self.__name=name
-        self.__age=age
-    def info(self):
-        print(self.__name,self.__age)
-class Student(Person):
-    def __init__(self,name,age,stu_id):
-        Person.__init__(self,name,age)
-        self.__stu_id=stu_id
-    def info(self):
-        Person.info(self)
-        print(self.__stu_id)
-p1=Person("zhangsan",18)
-p2=Student("lisi",20,123456)
-p1.info()
-print("---")
-p2.info()
+singer_song = {"zhangsan": "1.mp3", "lisi": "2.mp3", "wangwu": "3.mp3"}
+
+
+class MusicPlayer:
+    def __init__(self):
+        self.song_list = []
+        self.singer_list = []
+        self.is_paused = False
+        self.song_number = 0
+        for i in singer_song.keys():
+            self.singer_list.append(i)
+            self.song_list.append(singer_song[i])
+
+    def list_music(self):
+        for i in self.song_list:
+            print(i)
+
+    def play(self):
+        if self.is_paused:
+            self.is_paused = False
+            print("已暂停")
+        else:
+            self.is_paused = True
+            print("当前播放", self.song_list[self.song_number])
+
+    def next_song(self):
+        self.song_number = (self.song_number + 1) % len(self.song_list)
+        self.is_paused = False
+        self.play()
+
+    def choice_menu(self, choice):
+        if choice == '1':
+            self.list_music()
+        elif choice == '2':
+            self.play()
+        elif choice == '3':
+            self.next_song()
+
+
+a = MusicPlayer()
+while 1:
+    choice = input()
+    if choice == "q" or choice == "quit":
+        break
+    a.choice_menu(choice)

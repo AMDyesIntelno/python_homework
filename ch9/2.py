@@ -1,22 +1,39 @@
-class TemperatureConverter:
-    @staticmethod
-    def c2f(t_c):
-        t_f=(t_c*9/5)+32
-        return t_f
-    @staticmethod
-    def f2c(t_f):
-        t_c=(t_f-32)*5/9
-        return t_c
-print("1.从摄氏温度到华氏温度")
-print("2.从华氏温度到摄氏温度")
-choice=int(input())
-if choice==1:
-    t_c=float(input("请输入摄氏温度: "))
-    t_f=TemperatureConverter.c2f(t_c)
-    print("华氏温度为: %.2f"%t_f)
-elif choice==2:
-    t_f=float(input("请输入华氏温度: "))
-    t_c=TemperatureConverter.f2c(t_f)
-    print("摄氏温度为: %.2f"%t_c)
-else:
-    print("无此选项")
+import math
+
+
+class shape:
+    def __init__(self, color):
+        self.color = color
+
+    def GetColor(self):
+        return self.color
+
+    def GetArea(self):
+        return 0.0
+
+
+class Rectangle(shape):
+    def __init__(self, x, y, color):
+        shape.__init__(self, color)
+        self.x = x
+        self.y = y
+
+    def GetArea(self):
+        return self.x * self.y
+
+
+class Circle(shape):
+    def __init__(self, r, color):
+        shape.__init__(self, color)
+        self.r = r
+
+    def GetArea(self):
+        return math.pi * self.r * self.r
+
+
+a = Rectangle(1.0, 2.1, "black")
+print(a.GetArea())
+print(a.GetColor())
+b = Circle(3, "green")
+print(b.GetArea())
+print(b.GetColor())
