@@ -26,8 +26,8 @@ class Student:
 
 student_1 = Student("zhangsan", "123", "2000-01-01")
 student_2 = Student("zhangsan", "123", "2000-12-01")
-student_3 = Student("zhangsan", "123", "2000-12-05")
-student_4 = Student("zhangsan", "123", "2000-12-06")
+student_3 = Student("zhangsan", "123", "2000-12-06")
+student_4 = Student("zhangsan", "123", "2000-12-07")
 print(student_1.get_student_age())
 print(student_2.get_student_age())
 print(student_3.get_student_age())
