@@ -1,20 +1,21 @@
-#!/usr/bin/python3
-import argparse
-def selectionsort(array):
-    for i in range(0,len(array)):
-        posi=i
-        for j in range(i+1,len(array)):
-            if array[j]<array[posi]:
-                posi=j
+def fun(s,t):
+    if len(s)!=len(t):
+        return False
+    dict_s={}
+    dict_t={}
+    for i in s:
+        if i in dict_s:
+            dict_s[i]+=1
+        else:
+            dict_s[i]=1
 
-        array[posi],array[i]=array[i],array[posi]
-def main():
-    parser=argparse.ArgumentParser()
-    parser.add_argument("--list",type=int,nargs='+')
-    args=parser.parse_args()
-    list=args.list
-    selectionsort(list)
-    print(list)
-if __name__ == "__main__":
-    main()
-#./ch11/3.py --list 10 9 8 7 6 5 4 3 2 1
+    for i in t:
+        if i in dict_t:
+            dict_t[i]+=1
+        else:
+            dict_t[i]=1
+    return dict_t==dict_s
+
+s=input()
+t=input()
+print(fun(s,t))
