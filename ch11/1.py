@@ -8,6 +8,8 @@ def fun(s):
                 return False
             else:
                 stack.pop()
+    if len(stack):
+        return False
     return True
 s=input()
 print(fun(s))
